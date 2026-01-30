@@ -1,0 +1,430 @@
+/**
+ * ============================================
+ * Gerald Creates - Responsive Styles
+ * ============================================
+ * Mobile-first breakpoints:
+ *   Mobile:  <= 480px
+ *   Tablet:  <= 768px
+ *   Desktop: <= 1024px
+ *   Wide:    <= 1440px
+ * ============================================
+ */
+
+/* ─── TABLET AND BELOW (768px) ───────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Typography scale down */
+  h1 { font-size: 2.25rem; }
+  h2 { font-size: 1.85rem; }
+  h3 { font-size: 1.4rem; }
+
+  /* Spacing adjustments */
+  section { padding: var(--spacing-lg) 0; }
+  .container { padding: 0 var(--spacing-sm); }
+
+  /* Navigation - Mobile menu */
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 360px;
+    height: 100vh;
+    background: var(--color-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    transition: right var(--transition-speed) ease;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-links a {
+    color: var(--color-charcoal) !important;
+    font-size: 1.1rem;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--color-sage) !important;
+  }
+
+  .mobile-menu-overlay.active {
+    display: block;
+  }
+
+  /* Hero */
+  .hero-logo { font-size: 2.75rem; }
+  .hero-tagline { font-size: 1.05rem; }
+
+  /* About preview */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .about-image img {
+    height: 350px;
+  }
+
+  /* Services grid */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* Portfolio grid */
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Service sections */
+  .service-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .service-section:nth-child(even) .service-layout {
+    direction: ltr;
+  }
+
+  .service-image img {
+    height: 300px;
+  }
+
+  /* About layout */
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .about-photo img {
+    position: static;
+    max-height: 450px;
+    object-fit: cover;
+    width: 100%;
+  }
+
+  /* Contact layout */
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* Credentials */
+  .credentials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-sm);
+  }
+
+  .credential-item h3 {
+    font-size: 1.75rem;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  /* Lightbox */
+  .lightbox-prev,
+  .lightbox-next {
+    width: 44px;
+    height: 44px;
+    font-size: 2rem;
+  }
+
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+
+  /* Page hero */
+  .page-hero {
+    padding: calc(var(--header-height) + var(--spacing-lg)) 0 var(--spacing-md);
+  }
+
+  .page-hero h1 {
+    font-size: 2.25rem;
+  }
+
+  /* Testimonials */
+  .testimonial .quote {
+    font-size: 1.05rem;
+    padding: 0 var(--spacing-sm);
+  }
+}
+
+/* ─── MOBILE (480px) ─────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  /* Typography */
+  h1 { font-size: 1.85rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.2rem; }
+  h4 { font-size: 1.05rem; }
+
+  /* Spacing */
+  section { padding: var(--spacing-md) 0; }
+  .section-title { margin-bottom: var(--spacing-md); }
+
+  /* Hero */
+  .hero { min-height: 500px; }
+  .hero-logo { font-size: 2.25rem; }
+  .hero-tagline { font-size: 0.95rem; }
+  .scroll-indicator { bottom: 1.25rem; }
+
+  /* Portfolio grid - single column */
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-sm);
+  }
+
+  /* Service card */
+  .service-card img {
+    height: 220px;
+  }
+
+  /* Buttons */
+  .btn-primary,
+  .btn-outline,
+  .btn-secondary {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .btn-primary-large {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .service-cta,
+  .about-cta {
+    flex-direction: column;
+  }
+
+  .service-cta .btn-primary,
+  .service-cta .btn-outline {
+    width: 100%;
+  }
+
+  /* Contact form */
+  .contact-form-container {
+    padding: var(--spacing-sm);
+  }
+
+  /* Credentials */
+  .credentials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xs);
+  }
+
+  .credential-item {
+    padding: var(--spacing-sm);
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+    padding-top: 0;
+  }
+
+  .footer-bottom {
+    padding-top: var(--spacing-sm);
+  }
+
+  /* Filter buttons */
+  .filter-buttons {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* Lightbox */
+  .lightbox-close {
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .lightbox-counter {
+    bottom: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* Page hero */
+  .page-hero h1 {
+    font-size: 1.85rem;
+  }
+
+  .page-hero p {
+    font-size: 0.95rem;
+  }
+
+  /* CTA */
+  .cta h2 { font-size: 1.5rem; }
+  .cta p { font-size: 0.95rem; }
+
+  /* About image */
+  .about-image img {
+    height: 280px;
+  }
+
+  /* Service image */
+  .service-image img {
+    height: 250px;
+  }
+
+  /* Testimonial */
+  .testimonial .quote {
+    font-size: 0.95rem;
+  }
+
+  .testimonial .quote::before {
+    font-size: 3rem;
+    top: -1rem;
+  }
+}
+
+/* ─── SMALL MOBILE (320px) ───────────────────────────────── */
+@media (max-width: 320px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .hero-logo {
+    font-size: 1.85rem;
+  }
+
+  .hero-tagline {
+    font-size: 0.85rem;
+  }
+
+  h1 { font-size: 1.6rem; }
+  h2 { font-size: 1.35rem; }
+
+  .nav-links {
+    width: 90%;
+  }
+}
+
+/* ─── LARGE DESKTOP (1024px - 1440px) ────────────────────── */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+}
+
+/* ─── WIDE DESKTOP (1440px+) ─────────────────────────────── */
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .hero-logo {
+    font-size: 4.5rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.4rem;
+  }
+}
+
+/* ─── REDUCED MOTION ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-bg {
+    transform: none !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ─── HIGH CONTRAST MODE ─────────────────────────────────── */
+@media (prefers-contrast: high) {
+  :root {
+    --color-gray: #555555;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .portfolio-overlay {
+    background: rgba(0, 0, 0, 0.8);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    border-width: 2px;
+    border-color: #999;
+  }
+}
+
+/* ─── LANDSCAPE MOBILE ───────────────────────────────────── */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero {
+    min-height: 400px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+}
+
+/* ─── TOUCH DEVICE ADJUSTMENTS ───────────────────────────── */
+@media (hover: none) {
+  /* Show overlay permanently on touch devices */
+  .portfolio-item .portfolio-overlay {
+    opacity: 1;
+    background: linear-gradient(transparent 60%, rgba(0, 0, 0, 0.5));
+  }
+
+  /* Disable hover transforms on touch */
+  .portfolio-item:hover img {
+    transform: none;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+
+  .btn-primary:hover,
+  .btn-outline:hover,
+  .btn-secondary:hover,
+  .btn-primary-large:hover {
+    transform: none;
+  }
+}

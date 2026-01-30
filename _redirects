@@ -1,0 +1,5 @@
+# Redirect default Netlify subdomain to primary domain (uncomment when domain is connected)
+# https://geraldcreates.netlify.app/* https://geraldcreates.com/:splat 301!
+
+# Custom 404 page
+/* /index.html 404

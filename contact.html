@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Contact | Gerald Creates — Book Your Photography Session</title>
+  <meta name="description" content="Book a photography session with Gerald Creates. Couples, maternity, and personal branding photography in Singapore. Get in touch today.">
+  <meta name="keywords" content="book photographer singapore, contact gerald creates, photography booking, singapore photo session booking">
+  <meta name="author" content="Gerald Creates">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geraldcreates.com/contact.html">
+  <meta property="og:title" content="Contact | Gerald Creates">
+  <meta property="og:description" content="Ready to book your session? Get in touch and let's create something beautiful together.">
+  <meta property="og:image" content="https://geraldcreates.com/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Contact | Gerald Creates">
+  <meta property="twitter:description" content="Ready to book your session? Get in touch today.">
+  <meta property="twitter:image" content="https://geraldcreates.com/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ─── HEADER ─────────────────────────────────────────── -->
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Gerald Creates — Home">Gerald Creates</a>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="portfolio.html" role="menuitem">Portfolio</a></li>
+        <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" class="btn-nav-contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+
+  <!-- ─── MAIN CONTENT ───────────────────────────────────── -->
+  <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Let's Create Together</h1>
+        <p>Ready to book your session? Get in touch below.</p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" aria-label="Contact form and information">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Contact Info -->
+          <div class="contact-info reveal">
+            <h2>Get in Touch</h2>
+            <p>I'd love to hear about your vision. Fill out the form and I'll get back to you within 24 hours.</p>
+
+            <div class="contact-details">
+              <div class="contact-item">
+                <strong>Email</strong>
+                <p><a href="mailto:hello@geraldcreates.com">hello@geraldcreates.com</a></p>
+              </div>
+              <div class="contact-item">
+                <strong>Instagram</strong>
+                <p><a href="https://instagram.com/geraldcreates" target="_blank" rel="noopener">@geraldcreates</a></p>
+              </div>
+              <div class="contact-item">
+                <strong>Response Time</strong>
+                <p>Within 24 hours (usually faster!)</p>
+              </div>
+            </div>
+
+            <div class="contact-faqs">
+              <h3>Quick FAQs</h3>
+              <!-- FAQ items rendered dynamically from site-data.js -->
+              <div class="faq-list"></div>
+            </div>
+          </div>
+
+          <!-- Contact Form -->
+          <div class="contact-form-container reveal">
+            <!--
+              TODO: Replace YOUR_FORM_ID with your actual Formspree form ID.
+              1. Go to https://formspree.io and create a free account
+              2. Create a new form
+              3. Copy your form ID (e.g., "xrgvknao")
+              4. Replace "YOUR_FORM_ID" below with your ID
+            -->
+            <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+              <div class="form-group">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your full name">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+65 XXXX XXXX">
+              </div>
+
+              <div class="form-group">
+                <label for="service">I'm Interested In *</label>
+                <select id="service" name="service" required>
+                  <option value="">-- Select a service --</option>
+                  <!-- Options populated dynamically from services-data.js -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="date">Preferred Date(s)</label>
+                <input type="text" id="date" name="date" placeholder="e.g., Feb 15 or anytime in March">
+              </div>
+
+              <div class="form-group">
+                <label for="message">Tell Me About Your Vision *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="What are you looking for? Any specific ideas or locations in mind?"></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary">Send Message</button>
+
+              <div id="form-status" role="alert"></div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Calendly Embed Section -->
+    <section class="booking-calendar" aria-label="Booking calendar">
+      <div class="container">
+        <h2>Check My Availability</h2>
+        <p>Or book a free 15-minute consultation call to discuss your session</p>
+
+        <!-- Calendly inline widget placeholder -->
+        <div class="calendly-placeholder">
+          <p><strong>Calendly Booking Widget</strong></p>
+          <p>Your Calendly calendar will appear here once configured.</p>
+          <p style="font-size: 0.85rem; margin-top: 1rem; color: var(--color-gray);">
+            To set up: Replace this div with your Calendly embed code.<br>
+            See README.md for instructions.
+          </p>
+          <!--
+            INSTRUCTIONS: Replace this entire .calendly-placeholder div with:
+
+            <div class="calendly-inline-widget"
+                 data-url="https://calendly.com/YOUR_USERNAME"
+                 style="min-width:320px;height:630px;">
+            </div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Gerald Creates</h3>
+          <p>Creating Memories That Last</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p><a href="mailto:hello@geraldcreates.com">hello@geraldcreates.com</a></p>
+          <p><a href="https://instagram.com/geraldcreates" target="_blank" rel="noopener">@geraldcreates</a></p>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/geraldcreates" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17" cy="6.5" r="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Gerald Creates. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <!-- No-JavaScript Fallback -->
+  <noscript>
+    <div class="noscript-message">
+      <h2>JavaScript Required</h2>
+      <p>The contact form requires JavaScript. You can reach me directly at <a href="mailto:hello@geraldcreates.com">hello@geraldcreates.com</a>.</p>
+    </div>
+  </noscript>
+
+  <!-- Data Files -->
+  <script src="data/site-data.js"></script>
+  <script src="data/services-data.js"></script>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

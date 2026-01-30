@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary Meta Tags -->
+  <title>Portfolio | Gerald Creates — Singapore Photography</title>
+  <meta name="description" content="Browse Gerald Creates' photography portfolio — couples, maternity, and personal branding photography in Singapore.">
+  <meta name="keywords" content="photography portfolio singapore, couples photos, maternity photos, branding photos, gerald creates portfolio">
+  <meta name="author" content="Gerald Creates">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://geraldcreates.com/portfolio.html">
+  <meta property="og:title" content="Portfolio | Gerald Creates">
+  <meta property="og:description" content="A collection of moments I've had the privilege to capture. Couples, maternity, and personal branding photography.">
+  <meta property="og:image" content="https://geraldcreates.com/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Portfolio | Gerald Creates">
+  <meta property="twitter:description" content="A collection of moments I've had the privilege to capture.">
+  <meta property="twitter:image" content="https://geraldcreates.com/images/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Skip to Content -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ─── HEADER ─────────────────────────────────────────── -->
+  <header>
+    <nav aria-label="Main navigation">
+      <a href="index.html" class="logo" aria-label="Gerald Creates — Home">Gerald Creates</a>
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="portfolio.html" role="menuitem">Portfolio</a></li>
+        <li role="none"><a href="services.html" role="menuitem">Services</a></li>
+        <li role="none"><a href="about.html" role="menuitem">About</a></li>
+        <li role="none"><a href="contact.html" role="menuitem" class="btn-nav-contact">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" aria-hidden="true"></div>
+
+  <!-- ─── MAIN CONTENT ───────────────────────────────────── -->
+  <main id="main-content">
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Portfolio</h1>
+        <p>A collection of moments I've had the privilege to capture</p>
+      </div>
+    </section>
+
+    <!-- Filter Buttons -->
+    <section class="portfolio-filters" aria-label="Portfolio category filters">
+      <div class="container">
+        <div class="filter-buttons" role="group" aria-label="Filter by category">
+          <button class="filter-btn active" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="couples" aria-pressed="false">Couples</button>
+          <button class="filter-btn" data-filter="maternity" aria-pressed="false">Maternity</button>
+          <button class="filter-btn" data-filter="branding" aria-pressed="false">Branding</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="portfolio-grid-section" aria-label="Photography portfolio gallery">
+      <div class="container">
+        <!-- Grid rendered dynamically from portfolio-data.js -->
+        <div class="portfolio-grid"></div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" aria-label="Call to action">
+      <div class="container">
+        <h2>Love What You See?</h2>
+        <p>Let's create something beautiful together.</p>
+        <a href="contact.html" class="btn-primary-large">Book Your Session</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── LIGHTBOX MODAL ─────────────────────────────────── -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">&lsaquo;</button>
+    <button class="lightbox-next" aria-label="Next image">&rsaquo;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-image" src="" alt="">
+    </div>
+    <div class="lightbox-counter" aria-live="polite"></div>
+  </div>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h3>Gerald Creates</h3>
+          <p>Creating Memories That Last</p>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Get in Touch</h4>
+          <p><a href="mailto:hello@geraldcreates.com">hello@geraldcreates.com</a></p>
+          <p><a href="https://instagram.com/geraldcreates" target="_blank" rel="noopener">@geraldcreates</a></p>
+        </div>
+        <div class="footer-social">
+          <a href="https://instagram.com/geraldcreates" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="5"/><circle cx="17" cy="6.5" r="1.5"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Gerald Creates. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Back to top">&uarr;</button>
+
+  <!-- No-JavaScript Fallback -->
+  <noscript>
+    <div class="noscript-message">
+      <h2>JavaScript Required</h2>
+      <p>Please enable JavaScript to view the portfolio. You can reach me at <a href="mailto:hello@geraldcreates.com">hello@geraldcreates.com</a>.</p>
+    </div>
+  </noscript>
+
+  <!-- Data Files -->
+  <script src="data/portfolio-data.js"></script>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/portfolio.js"></script>
+</body>
+</html>
