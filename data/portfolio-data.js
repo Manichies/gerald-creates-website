@@ -17,13 +17,54 @@
  */
 
 const PORTFOLIO_DATA = [
-  // TODO: Replace with your actual photos
-  // Example entry:
+  // Unscripted
   {
-    id: 'sample-01',
-    category: 'couples',
-    src: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=600&h=750&fit=crop',
-    alt: 'Sample portfolio image - replace with your photo',
+    id: 'unscripted-01',
+    category: 'unscripted',
+    src: 'images/portfolio/unscripted/kamakuraBike.JPG',
+    alt: 'Bicycle scene in Kamakura, Japan',
+    featured: true
+  },
+  {
+    id: 'unscripted-02',
+    category: 'unscripted',
+    src: 'images/portfolio/unscripted/bodinTemple.JPG',
+    alt: 'Bodin Temple atmosphere',
+    featured: true
+  },
+  {
+    id: 'unscripted-03',
+    category: 'unscripted',
+    src: 'images/portfolio/unscripted/kamakuraBeach.JPG',
+    alt: 'Beach scene in Kamakura, Japan',
+    featured: true
+  },
+  {
+    id: 'unscripted-04',
+    category: 'unscripted',
+    src: 'images/portfolio/unscripted/sqStars.JPG',
+    alt: 'Starry night photography',
+    featured: true
+  },
+  {
+    id: 'unscripted-05',
+    category: 'unscripted',
+    src: 'images/portfolio/unscripted/alleyHK.JPG',
+    alt: 'Hong Kong alley street photography',
+    featured: true
+  },
+  {
+    id: 'unscripted-06',
+    category: 'unscripted',
+    src: 'images/portfolio/unscripted/casino.JPG',
+    alt: 'Casino ambiance',
+    featured: true
+  },
+  {
+    id: 'unscripted-07',
+    category: 'unscripted',
+    src: 'images/portfolio/unscripted/kamakuraTrain.JPG',
+    alt: 'Train scene in Kamakura, Japan',
     featured: true
   }
 ];
