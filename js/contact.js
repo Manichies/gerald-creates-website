@@ -138,13 +138,13 @@
               var errorMsg = data.errors.map(function (err) { return err.message; }).join(', ');
               showStatus(formStatus, errorMsg, 'error');
             } else {
-              showStatus(formStatus, 'Something went wrong. Please try emailing me directly at hello@geraldcreates.com', 'error');
+              showStatus(formStatus, 'Something went wrong. Please try emailing me directly at createsgerald@gmail.com', 'error');
             }
           });
         }
       })
       .catch(function () {
-        showStatus(formStatus, 'Something went wrong. Please try emailing me directly at hello@geraldcreates.com', 'error');
+        showStatus(formStatus, 'Something went wrong. Please try emailing me directly at createsgerald@gmail.com', 'error');
       })
       .finally(function () {
         submitBtn.disabled = false;

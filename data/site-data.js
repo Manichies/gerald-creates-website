@@ -10,7 +10,7 @@ const SITE_CONFIG = {
   business: {
     name: 'Gerald Creates',
     tagline: 'Creating Memories That Last',
-    email: 'hello@geraldcreates.com',
+    email: 'createsgerald@gmail.com',
     phone: '+65 XXXX XXXX', // TODO: Replace with actual phone number
     instagram: '@geraldcreates',
     instagramUrl: 'https://instagram.com/geraldcreates',
