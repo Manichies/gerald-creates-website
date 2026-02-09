@@ -31,7 +31,7 @@ const SITE_CONFIG = {
       'Singapore-based — I know the best local spots for stunning photos'
     ],
     // TODO: Replace with your actual photo
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=1000&fit=crop&crop=face',
+    image: 'images/geraldProfile.JPG',
     imageAlt: 'Gerald, photographer based in Singapore'
   },
 
