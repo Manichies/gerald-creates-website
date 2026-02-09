@@ -10,7 +10,7 @@
  *
  * Fields:
  *   id       - Unique identifier (e.g., 'couples-11')
- *   category - Must match a filter: 'couples', 'maternity', or 'branding'
+ *   category - Must match a filter: 'couples', 'maternity', or 'unscripted'
  *   src      - Path to image (relative or absolute URL)
  *   alt      - Descriptive alt text for accessibility & SEO
  *   featured - true = shows on homepage grid (aim for ~9 featured images)

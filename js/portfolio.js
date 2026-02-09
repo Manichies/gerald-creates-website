@@ -106,7 +106,7 @@
   /* ─── HANDLE INITIAL URL HASH ──────────────────────────── */
   function handleInitialHash() {
     var hash = window.location.hash.replace('#', '');
-    if (hash && ['couples', 'maternity', 'branding'].indexOf(hash) > -1) {
+    if (hash && ['couples', 'maternity', 'unscripted'].indexOf(hash) > -1) {
       var btn = document.querySelector('.filter-btn[data-filter="' + hash + '"]');
       if (btn) btn.click();
     }
