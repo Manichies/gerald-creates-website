@@ -1540,6 +1540,34 @@ footer h4 {
   transform: translateY(-2px);
 }
 
+/* ─── WHATSAPP FLOATING BUTTON ───────────────────────────── */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  color: var(--color-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-speed) ease;
+  z-index: 900;
+}
+
+.whatsapp-btn svg {
+  width: 28px;
+  height: 28px;
+}
+
+.whatsapp-btn:hover {
+  background: #128C7E;
+  transform: scale(1.1);
+}
+
 /* ─── SCROLL REVEAL ANIMATION ────────────────────────────── */
 .reveal {
   opacity: 0;
@@ -1630,6 +1658,7 @@ img.loaded {
   footer,
   .hamburger,
   .back-to-top,
+  .whatsapp-btn,
   .scroll-indicator,
   .lightbox,
   .btn-primary,
