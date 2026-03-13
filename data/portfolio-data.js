@@ -95,14 +95,14 @@ const PORTFOLIO_DATA = [
   {
     id: 'portraits-04',
     category: 'portraits',
-    src: 'images/portfolio/portraits/IMG_2508.JPG',
+    src: 'images/portfolio/portraits/IMG_2573.JPG',
     alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-05',
     category: 'portraits',
-    src: 'images/portfolio/portraits/IMG_2573.JPG',
+    src: 'images/portfolio/portraits/IMG_2508.JPG',
     alt: 'Portrait photograph',
     featured: true
   },
