@@ -39,13 +39,13 @@ const PORTFOLIO_DATA = [
     alt: 'Beach scene in Kamakura, Japan',
     featured: true
   },
-  {
-    id: 'unscripted-04',
-    category: 'unscripted',
-    src: 'images/portfolio/unscripted/sqStars.JPG',
-    alt: 'Starry night photography',
-    featured: true
-  },
+  // {
+  //   id: 'unscripted-04',
+  //   category: 'unscripted',
+  //   src: 'images/portfolio/unscripted/sqStars.JPG',
+  //   alt: 'Starry night photography',
+  //   featured: true
+  // },
   {
     id: 'unscripted-05',
     category: 'unscripted',
@@ -88,40 +88,47 @@ const PORTFOLIO_DATA = [
   {
     id: 'portraits-03',
     category: 'portraits',
-    src: 'images/portfolio/portraits/IMG_2507.JPG',
+    src: 'images/portfolio/portraits/IMG_2574.JPG',
     alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-04',
     category: 'portraits',
-    src: 'images/portfolio/portraits/IMG_2573.JPG',
+    src: 'images/portfolio/portraits/IMG_2507.JPG',
     alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-05',
     category: 'portraits',
-    src: 'images/portfolio/portraits/IMG_2508.JPG',
+    src: 'images/portfolio/portraits/IMG_2573.JPG',
     alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-06',
     category: 'portraits',
-    src: 'images/portfolio/portraits/IMG_2381.JPG',
+    src: 'images/portfolio/portraits/IMG_2508.JPG',
     alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-07',
     category: 'portraits',
-    src: 'images/portfolio/portraits/IMG_2382.JPG',
+    src: 'images/portfolio/portraits/IMG_2381.JPG',
     alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-08',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/IMG_2382.JPG',
+    alt: 'Portrait photograph',
+    featured: true
+  },
+  {
+    id: 'portraits-09',
     category: 'portraits',
     src: 'images/portfolio/portraits/IMG_2473.JPG',
     alt: 'Portrait photograph',
