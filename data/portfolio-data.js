@@ -81,22 +81,36 @@ const PORTFOLIO_DATA = [
   {
     id: 'portraits-01',
     category: 'portraits',
-    src: 'images/portfolio/portraits/portrait-01.svg',
-    alt: 'Portrait placeholder with gradient background',
+    src: 'images/portfolio/portraits/IMG_2472.JPG',
+    alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-02',
     category: 'portraits',
-    src: 'images/portfolio/portraits/portrait-02.svg',
-    alt: 'Portrait placeholder with soft tones',
+    src: 'images/portfolio/portraits/IMG_2476.JPG',
+    alt: 'Portrait photograph',
     featured: true
   },
   {
     id: 'portraits-03',
     category: 'portraits',
-    src: 'images/portfolio/portraits/portrait-03.svg',
-    alt: 'Portrait placeholder with vibrant color',
+    src: 'images/portfolio/portraits/IMG_2507.JPG',
+    alt: 'Portrait photograph',
+    featured: true
+  },
+  {
+    id: 'portraits-04',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/IMG_2508.JPG',
+    alt: 'Portrait photograph',
+    featured: true
+  },
+  {
+    id: 'portraits-05',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/IMG_2573.JPG',
+    alt: 'Portrait photograph',
     featured: true
   }
 ];
