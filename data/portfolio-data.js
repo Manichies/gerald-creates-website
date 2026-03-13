@@ -106,6 +106,27 @@ const PORTFOLIO_DATA = [
     alt: 'Portrait photograph',
     featured: true
   },
+  {
+    id: 'portraits-06',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/IMG_2381.JPG',
+    alt: 'Portrait photograph',
+    featured: true
+  },
+  {
+    id: 'portraits-07',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/IMG_2382.JPG',
+    alt: 'Portrait photograph',
+    featured: true
+  },
+  {
+    id: 'portraits-08',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/IMG_2473.JPG',
+    alt: 'Portrait photograph',
+    featured: true
+  },
 
   // Couples
   {
