@@ -66,5 +66,28 @@ const PORTFOLIO_DATA = [
     src: 'images/portfolio/unscripted/kamakuraTrain.JPG',
     alt: 'Train scene in Kamakura, Japan',
     featured: true
+  },
+
+  // Portraits
+  {
+    id: 'portraits-01',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/portrait-01.svg',
+    alt: 'Portrait placeholder with gradient background',
+    featured: true
+  },
+  {
+    id: 'portraits-02',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/portrait-02.svg',
+    alt: 'Portrait placeholder with soft tones',
+    featured: true
+  },
+  {
+    id: 'portraits-03',
+    category: 'portraits',
+    src: 'images/portfolio/portraits/portrait-03.svg',
+    alt: 'Portrait placeholder with vibrant color',
+    featured: true
   }
 ];
