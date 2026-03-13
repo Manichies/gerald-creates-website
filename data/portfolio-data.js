@@ -68,14 +68,7 @@ const PORTFOLIO_DATA = [
     featured: true
   },
 
-  // Couples
-  {
-    id: 'couples-01',
-    category: 'couples',
-    src: 'images/portfolio/couples/IMG_2464.JPG',
-    alt: 'Couples photography session',
-    featured: true
-  },
+  
 
   // Portraits
   {
@@ -111,6 +104,15 @@ const PORTFOLIO_DATA = [
     category: 'portraits',
     src: 'images/portfolio/portraits/IMG_2573.JPG',
     alt: 'Portrait photograph',
+    featured: true
+  },
+
+  // Couples
+  {
+    id: 'couples-01',
+    category: 'couples',
+    src: 'images/portfolio/couples/IMG_2464.JPG',
+    alt: 'Couples photography session',
     featured: true
   }
 ];
