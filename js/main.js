@@ -254,26 +254,83 @@
   }
 
   /* ─── PORTFOLIO PREVIEW (Home page) ────────────────────── */
+  function pickRandom(arr, n) {
+    var shuffled = arr.slice().sort(function () { return Math.random() - 0.5; });
+    return shuffled.slice(0, Math.min(n, arr.length));
+  }
+
   function renderPortfolioPreview() {
     if (typeof PORTFOLIO_DATA === 'undefined') return;
     var grid = document.querySelector('.portfolio-preview .portfolio-grid');
     if (!grid) return;
 
-    var featured = PORTFOLIO_DATA.filter(function (item) { return item.featured; });
+    var rows = [
+      { key: 'portraits',   label: 'Portraits' },
+      { key: 'unscripted',  label: 'Unscripted' },
+      { key: 'couples',     label: 'Couples' }
+    ];
+
     grid.innerHTML = '';
 
-    featured.forEach(function (item) {
-      var div = document.createElement('div');
-      div.className = 'portfolio-item reveal';
-      div.innerHTML =
-        '<img src="' + item.src + '" alt="' + item.alt + '" loading="lazy">' +
-        '<div class="portfolio-overlay">' +
-          '<span class="portfolio-category">' + item.category + '</span>' +
-        '</div>';
-      grid.appendChild(div);
+    var rowsContainer = document.createElement('div');
+    rowsContainer.className = 'portfolio-rows';
+
+    rows.forEach(function (cat) {
+      var photos = PORTFOLIO_DATA.filter(function (item) { return item.category === cat.key; });
+      var picked = pickRandom(photos, 3);
+
+      var row = document.createElement('div');
+      row.className = 'portfolio-row';
+      row.setAttribute('data-category', cat.key);
+
+      var label = document.createElement('div');
+      label.className = 'row-label';
+      label.textContent = cat.label;
+
+      var rowGrid = document.createElement('div');
+      rowGrid.className = 'row-grid';
+
+      picked.forEach(function (item) {
+        var div = document.createElement('div');
+        div.className = 'portfolio-item reveal';
+        var img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.alt;
+        img.loading = 'lazy';
+        div.appendChild(img);
+        rowGrid.appendChild(div);
+      });
+
+      row.appendChild(label);
+      row.appendChild(rowGrid);
+      rowsContainer.appendChild(row);
     });
 
+    grid.appendChild(rowsContainer);
     setupScrollReveal();
+
+    // Rotate each row every 5 minutes with a crossfade
+    setInterval(function () {
+      rows.forEach(function (cat) {
+        var photos = PORTFOLIO_DATA.filter(function (item) { return item.category === cat.key; });
+        if (photos.length <= 3) return;
+
+        var row = document.querySelector('.portfolio-row[data-category="' + cat.key + '"]');
+        if (!row) return;
+
+        var imgs = row.querySelectorAll('.row-grid .portfolio-item img');
+        var picked = pickRandom(photos, 3);
+
+        imgs.forEach(function (img, i) {
+          img.classList.add('img-fading');
+          setTimeout(function () {
+            img.src = picked[i].src;
+            img.alt = picked[i].alt;
+            img.classList.remove('img-fading');
+          }, 500);
+        });
+      });
+    }, 5 * 60 * 1000);
   }
 
   /* ─── TESTIMONIALS SLIDER ──────────────────────────────── */

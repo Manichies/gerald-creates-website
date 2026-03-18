@@ -693,6 +693,34 @@ header.sticky .hamburger span {
   gap: var(--spacing-sm);
 }
 
+/* Homepage category rows override */
+.portfolio-preview .portfolio-grid {
+  display: block;
+}
+
+.portfolio-rows {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.portfolio-row .row-label {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-sm);
+}
+
+.row-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+
 .portfolio-item {
   position: relative;
   overflow: hidden;
@@ -705,7 +733,11 @@ header.sticky .hamburger span {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--transition-speed) ease;
+  transition: transform var(--transition-speed) ease, opacity 0.5s ease;
+}
+
+.portfolio-item img.img-fading {
+  opacity: 0;
 }
 
 .portfolio-item:hover img {
