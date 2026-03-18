@@ -12,8 +12,8 @@ const SITE_CONFIG = {
     tagline: 'Creating Memories That Last',
     email: 'createsgerald@gmail.com',
     phone: '+65 XXXX XXXX', // TODO: Replace with actual phone number
-    instagram: '@geraldcreates',
-    instagramUrl: 'https://instagram.com/geraldcreates',
+    instagram: '@geraldcreates_',
+    instagramUrl: 'https://instagram.com/geraldcreates_',
     location: 'Singapore',
     url: 'https://geraldcreates.com'
   },
@@ -27,8 +27,7 @@ const SITE_CONFIG = {
     reasons: [
       'Professional yet approachable — I make photo sessions fun and comfortable',
       'Fast turnaround — your photos delivered within 48 hours',
-      'Modern aesthetic — clean, timeless images you\'ll love forever',
-      'Singapore-based — I know the best local spots for stunning photos'
+      'Modern aesthetic — clean, timeless images you\'ll love forever'
     ],
     // TODO: Replace with your actual photo
     image: 'images/geraldProfile.JPG',
