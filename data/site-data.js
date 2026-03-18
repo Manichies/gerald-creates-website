@@ -21,9 +21,9 @@ const SITE_CONFIG = {
   about: {
     headline: "Hey, I'm Gerald",
     intro: "I'm a Singapore-based photographer who believes the best photos happen when you're being yourself. No awkward poses, no forced smiles — just genuine moments captured beautifully.",
-    story: "I started photography [X years ago] and quickly fell in love with telling people's stories through images. Whether you're a couple celebrating your love, expecting parents preparing for your new arrival, or a professional building your personal brand, I'm here to create images you'll treasure.", // TODO: Update with your actual story
+    story: "I started photography as a hobby and quickly fell in love with telling people's stories through images. Whether you're a couple celebrating your love, expecting parents preparing for your new arrival, or a professional building your personal brand, I'm here to create images you'll treasure.",
     approach: "I keep things simple: authentic, modern, and timeless. I want you to look at your photos in 20 years and still love them. That means no trendy filters, no over-editing — just beautiful, honest photography.",
-    personal: "You'll find me exploring Singapore's hidden photography spots, traveling (with a goal to photograph all seven continents), or planning my next adventure. I believe great photographers are always learning, always exploring, always seeing the world with fresh eyes.",
+    personal: "You'll usually find me doom-scrolling through TikTok and Reels, hunting for the next incredible spot somewhere in the world 🌍✈️ When I'm not doing that, I'm either traveling, chasing new perspectives, or planning my next adventure. I believe the best photographers never stop evolving — they keep learning, keep exploring, and keep seeing the world with fresh eyes 📸",
     reasons: [
       'Professional yet approachable — I make photo sessions fun and comfortable',
       'Fast turnaround — your photos delivered within 48 hours',
