@@ -16,29 +16,23 @@
 
 const TESTIMONIALS_DATA = [
   {
-    quote: "Gerald captured our engagement perfectly. The photos are stunning and we got so many compliments. Highly recommend!",
-    author: 'Sarah & Tom',
-    service: 'Couples Photography'
+    quote: "I'm not someone who's comfortable in front of a camera, but the whole experience felt so natural. Gerald captured a side of me I didn't even know existed. Sharp, well-lit, intentional — these are photos I'll actually be proud to use. 10/10 would shoot again.",
+    author: 'Jia Wei',
+    service: 'Portrait Photography'
   },
   {
-    quote: "I was nervous about maternity photos, but Gerald made me feel so comfortable. The images are beautiful and natural.",
-    author: 'Michelle',
-    service: 'Maternity Photography'
+    quote: "Gerald did an amazing job balancing Bali's beautiful scenery while keeping me as the focus. His color grading and contrast edits perfectly captured the atmosphere I wanted, and his direction made posing feel natural and fun. He's great at bringing your vision to life while maintaining his own style. Will definitely book again!",
+    author: 'Tisha N.N.',
+    service: 'Portrait Photography'
   },
   {
-    quote: "Professional, creative, and delivered exactly what I needed for my LinkedIn and website. Worth every dollar.",
-    author: 'David Chen',
-    service: 'Personal Branding'
+    quote: "Despite his young age, Gerald's work reflects a maturity and creativity that really stands out. He captures both fun and meaningful moments effortlessly, all while keeping the experience comfortable and enjoyable. Highly talented, highly recommended.",
+    author: 'Yi Xiu',
+    service: 'Portrait Photography'
   },
   {
-    quote: "We've used Gerald for both our engagement and maternity shoots. Consistently amazing quality and such a great experience every time.",
-    author: 'James & Priya',
-    service: 'Couples & Maternity Photography'
-  },
-  {
-    quote: "Gerald has an incredible eye for finding the perfect angles and lighting. Our photos look like they belong in a magazine!",
-    author: 'Rachel Lim',
-    service: 'Couples Photography'
+    quote: "Gerald is an experienced professional who has great creative direction, adaptability and eye for details. He is patient and encouraging while being clear and efficient throughout the shoot. The photos turned out better than expected and we are very satisfied with the overall process. We had the most comfortable and fun experience working with him and would highly recommend Gerald to anyone.",
+    author: 'Jing Yun',
+    service: 'Couple Photography'
   }
-  // TODO: Add more testimonials as you collect them!
 ];
