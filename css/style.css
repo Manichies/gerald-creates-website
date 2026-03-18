@@ -825,6 +825,41 @@ header.sticky .hamburger span {
   transform: scale(1.2);
 }
 
+/* ─── INSTAGRAM FEED SECTION ────────────────────────────── */
+.instagram-feed {
+  background: var(--color-white);
+  text-align: center;
+}
+
+.instagram-feed-header {
+  margin-bottom: var(--spacing-md);
+}
+
+.instagram-feed-header h2 {
+  margin-bottom: var(--spacing-xs);
+}
+
+.instagram-feed-header p {
+  font-size: 1rem;
+  color: var(--color-gray);
+}
+
+.instagram-feed-header a {
+  color: var(--color-sage);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-speed);
+}
+
+.instagram-feed-header a:hover {
+  color: var(--color-sage-dark);
+}
+
+behold-widget {
+  display: block;
+  width: 100%;
+}
+
 /* ─── CTA SECTION ────────────────────────────────────────── */
 .cta {
   background: var(--color-charcoal);
