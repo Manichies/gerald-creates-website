@@ -160,6 +160,13 @@
       "src": "images/portfolio/couples/IMG_3755.JPG",
       "alt": "Couples photography session",
       "featured": true
+    },
+    {
+      "featured": true,
+      "id": "maternity-06",
+      "category": "maternity",
+      "src": "https://res.cloudinary.com/dnduxr69x/image/upload/v1776061759/IMG_3739_ymdsrs.jpg",
+      "alt": "Baiyang & Alvin"
     }
   ]
 }
