@@ -1,0 +1,51 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# ── Cloudinary media library ──────────────────────────────────────────────────
+# Replace YOUR_CLOUD_NAME and YOUR_API_KEY with your Cloudinary credentials.
+# Find them at: https://console.cloudinary.com/settings/api-keys
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: YOUR_CLOUD_NAME
+    api_key: YOUR_API_KEY
+
+# ── Collections ───────────────────────────────────────────────────────────────
+collections:
+  - name: portfolio
+    label: Portfolio Photos
+    files:
+      - name: photos
+        label: All Photos
+        file: data/portfolio-data.json
+        fields:
+          - name: photos
+            label: Photos
+            widget: list
+            fields:
+              - label: "ID"
+                name: id
+                widget: string
+                hint: "Unique ID — e.g. maternity-06, couples-03"
+              - label: "Category"
+                name: category
+                widget: select
+                options:
+                  - { label: "Couples",    value: couples }
+                  - { label: "Maternity",  value: maternity }
+                  - { label: "Portraits",  value: portraits }
+                  - { label: "Unscripted", value: unscripted }
+              - label: "Photo"
+                name: src
+                widget: image
+                hint: "Upload via Cloudinary or paste a URL"
+              - label: "Alt Text"
+                name: alt
+                widget: string
+                hint: "Short description of the photo (used for accessibility & SEO)"
+              - label: "Show on Homepage"
+                name: featured
+                widget: boolean
+                default: true
+                hint: "If on, this photo may appear in the homepage preview rows"

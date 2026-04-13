@@ -12,7 +12,18 @@
   'use strict';
 
   /* ─── DOM READY ────────────────────────────────────────── */
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('data/portfolio-data.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        window.PORTFOLIO_DATA = data.photos;
+        init();
+      })
+      .catch(function () {
+        // Fall back to any pre-loaded global (e.g. during local dev without a server)
+        init();
+      });
+  });
 
   function init() {
     setupStickyHeader();

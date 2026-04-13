@@ -10,7 +10,17 @@
 (function () {
   'use strict';
 
-  document.addEventListener('DOMContentLoaded', initPortfolio);
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('data/portfolio-data.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        window.PORTFOLIO_DATA = data.photos;
+        initPortfolio();
+      })
+      .catch(function () {
+        initPortfolio();
+      });
+  });
 
   var currentItems = [];    // currently visible items (filtered)
   var allItems = [];        // all rendered DOM items

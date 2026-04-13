@@ -1,0 +1,165 @@
+{
+  "photos": [
+    {
+      "id": "unscripted-01",
+      "category": "unscripted",
+      "src": "images/portfolio/unscripted/kamakuraBike.JPG",
+      "alt": "Bicycle scene in Kamakura, Japan",
+      "featured": true
+    },
+    {
+      "id": "unscripted-02",
+      "category": "unscripted",
+      "src": "images/portfolio/unscripted/bodinTemple.JPG",
+      "alt": "Bodin Temple atmosphere",
+      "featured": true
+    },
+    {
+      "id": "unscripted-03",
+      "category": "unscripted",
+      "src": "images/portfolio/unscripted/kamakuraBeach.JPG",
+      "alt": "Beach scene in Kamakura, Japan",
+      "featured": true
+    },
+    {
+      "id": "unscripted-05",
+      "category": "unscripted",
+      "src": "images/portfolio/unscripted/alleyHK.JPG",
+      "alt": "Hong Kong alley street photography",
+      "featured": true
+    },
+    {
+      "id": "unscripted-06",
+      "category": "unscripted",
+      "src": "images/portfolio/unscripted/casino.JPG",
+      "alt": "Casino ambiance",
+      "featured": true
+    },
+    {
+      "id": "unscripted-07",
+      "category": "unscripted",
+      "src": "images/portfolio/unscripted/kamakuraTrain.JPG",
+      "alt": "Train scene in Kamakura, Japan",
+      "featured": true
+    },
+    {
+      "id": "portraits-01",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2472.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-02",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2476.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-03",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2574.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-04",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2507.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-05",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2573.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-06",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2508.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-07",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2381.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-08",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2382.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-09",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_2473.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "portraits-10",
+      "category": "portraits",
+      "src": "images/portfolio/portraits/IMG_3751.JPG",
+      "alt": "Portrait photograph",
+      "featured": true
+    },
+    {
+      "id": "maternity-01",
+      "category": "maternity",
+      "src": "images/portfolio/maternity/IMG_3728.JPG",
+      "alt": "Maternity photography session",
+      "featured": true
+    },
+    {
+      "id": "maternity-02",
+      "category": "maternity",
+      "src": "images/portfolio/maternity/IMG_3733.JPG",
+      "alt": "Maternity photography session",
+      "featured": true
+    },
+    {
+      "id": "maternity-03",
+      "category": "maternity",
+      "src": "images/portfolio/maternity/IMG_3737.JPG",
+      "alt": "Maternity photography session",
+      "featured": true
+    },
+    {
+      "id": "maternity-04",
+      "category": "maternity",
+      "src": "images/portfolio/maternity/IMG_3729.JPG",
+      "alt": "Maternity photography session",
+      "featured": true
+    },
+    {
+      "id": "maternity-05",
+      "category": "maternity",
+      "src": "images/portfolio/maternity/IMG_3730.JPG",
+      "alt": "Maternity photography session",
+      "featured": true
+    },
+    {
+      "id": "couples-01",
+      "category": "couples",
+      "src": "images/portfolio/couples/IMG_2464.JPG",
+      "alt": "Couples photography session",
+      "featured": true
+    },
+    {
+      "id": "couples-02",
+      "category": "couples",
+      "src": "images/portfolio/couples/IMG_3755.JPG",
+      "alt": "Couples photography session",
+      "featured": true
+    }
+  ]
+}

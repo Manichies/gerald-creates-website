@@ -215,11 +215,24 @@
 
   <!-- Data Files (loaded before scripts that use them) -->
   <script src="data/site-data.js"></script>
-  <script src="data/portfolio-data.js"></script>
   <script src="data/services-data.js"></script>
   <script src="data/testimonials-data.js"></script>
 
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
+
+  <!-- Netlify Identity (required for /admin login redirect) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', function (user) {
+        if (!user) {
+          window.netlifyIdentity.on('login', function () {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>
