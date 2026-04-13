@@ -135,6 +135,29 @@ const PORTFOLIO_DATA = [
     featured: true
   },
 
+  // Maternity
+  {
+    id: 'maternity-01',
+    category: 'maternity',
+    src: 'images/portfolio/maternity/IMG_3728.JPG',
+    alt: 'Maternity photography session',
+    featured: true
+  },
+  {
+    id: 'maternity-02',
+    category: 'maternity',
+    src: 'images/portfolio/maternity/IMG_3733.JPG',
+    alt: 'Maternity photography session',
+    featured: true
+  },
+  {
+    id: 'maternity-03',
+    category: 'maternity',
+    src: 'images/portfolio/maternity/IMG_3737.JPG',
+    alt: 'Maternity photography session',
+    featured: true
+  },
+
   // Couples
   {
     id: 'couples-01',

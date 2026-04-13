@@ -266,6 +266,7 @@
 
     var rows = [
       { key: 'portraits',   label: 'Portraits' },
+      { key: 'maternity',   label: 'Maternity' },
       { key: 'unscripted',  label: 'Unscripted' },
       { key: 'couples',     label: 'Couples' }
     ];
