@@ -16,6 +16,32 @@
  *   featured - true = shows on homepage grid (aim for ~9 featured images)
  */
 
+/**
+ * MATERNITY CLIENTS
+ * Each entry = one client photoshoot session.
+ * photos[] = all images taken for that session.
+ * The portfolio page shows a 3-photo mosaic preview per client;
+ * clicking it opens a lightbox with the full set.
+ *
+ * HOW TO ADD A NEW CLIENT:
+ *   1. Add their photos to /images/portfolio/maternity/{session-folder}/
+ *   2. Copy the template block below and fill in the details.
+ */
+const MATERNITY_CLIENTS = [
+  {
+    id: 'client-01',
+    name: 'Alvin & Baiyang',
+    description: 'A soft golden hour by the sea — celebrating the arrival of their little one with the warmth of family, love, and the sound of gentle waves.',
+    photos: [
+      { id: 'maternity-01', src: 'images/portfolio/maternity/IMG_3728.JPG', alt: 'Maternity photography session' },
+      { id: 'maternity-02', src: 'images/portfolio/maternity/IMG_3733.JPG', alt: 'Maternity photography session' },
+      { id: 'maternity-03', src: 'images/portfolio/maternity/IMG_3737.JPG', alt: 'Maternity photography session' },
+      { id: 'maternity-04', src: 'images/portfolio/maternity/IMG_3729.JPG', alt: 'Maternity photography session' },
+      { id: 'maternity-05', src: 'images/portfolio/maternity/IMG_3730.JPG', alt: 'Maternity photography session' }
+    ]
+  }
+];
+
 const PORTFOLIO_DATA = [
   // Unscripted
   {

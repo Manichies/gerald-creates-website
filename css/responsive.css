@@ -87,6 +87,11 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Maternity client gallery — 3 columns on tablet */
+  .client-gallery-grid {
+    columns: 3;
+  }
+
   /* Service sections */
   .service-layout {
     grid-template-columns: 1fr;
@@ -186,6 +191,16 @@
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-sm);
+  }
+
+  /* Maternity client cards — 1 column + gallery grid on mobile */
+  .maternity-clients-section {
+    grid-template-columns: 1fr;
+  }
+
+  .client-gallery-grid {
+    columns: 2;
+    padding: 4px 0.75rem 3rem;
   }
 
   /* Service card */
