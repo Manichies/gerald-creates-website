@@ -3,7 +3,7 @@
  * Gerald Creates - Portfolio JavaScript
  * ============================================
  * Handles: Portfolio grid rendering, category filtering,
- * maternity client cards → gallery overlay → lightbox.
+ * client session cards (maternity, graduation) → gallery overlay → lightbox.
  * ============================================
  */
 
@@ -15,9 +15,10 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         window.PORTFOLIO_DATA = data.photos;
-        if (data.maternity_clients) {
-          window.MATERNITY_CLIENTS = data.maternity_clients;
-        }
+        window.CLIENT_SESSIONS = {
+          maternity: data.maternity_clients || [],
+          graduation: data.graduation_clients || []
+        };
         initPortfolio();
       })
       .catch(function () {
@@ -40,7 +41,7 @@
     if (!grid || typeof PORTFOLIO_DATA === 'undefined') return;
 
     renderPortfolioGrid(grid);
-    renderMaternityClientsSection(grid);
+    renderClientSessionSections(grid);
     createClientGalleryOverlay();
     setupFilters();
     setupLightbox();
@@ -75,19 +76,27 @@
     setupGridReveal();
   }
 
-  /* ─── MATERNITY CLIENT CARDS (3-up grid, single cover) ─── */
-  function renderMaternityClientsSection(grid) {
-    if (typeof MATERNITY_CLIENTS === 'undefined' || !MATERNITY_CLIENTS.length) return;
+  /* ─── CLIENT SESSION CARDS (3-up grid, single cover) ───── */
+  // One hidden section per category that has client sessions
+  // (maternity, graduation); shown when that filter is picked.
+  function renderClientSessionSections(grid) {
+    if (typeof CLIENT_SESSIONS === 'undefined') return;
 
-    var section = document.createElement('div');
-    section.className = 'maternity-clients-section';
-    section.style.display = 'none';
+    Object.keys(CLIENT_SESSIONS).forEach(function (category) {
+      var clients = CLIENT_SESSIONS[category];
+      if (!clients.length) return;
 
-    MATERNITY_CLIENTS.forEach(function (client) {
-      section.appendChild(createClientCard(client));
+      var section = document.createElement('div');
+      section.className = 'client-sessions-section';
+      section.setAttribute('data-category', category);
+      section.style.display = 'none';
+
+      clients.forEach(function (client) {
+        section.appendChild(createClientCard(client));
+      });
+
+      grid.parentNode.insertBefore(section, grid.nextSibling);
     });
-
-    grid.parentNode.insertBefore(section, grid.nextSibling);
   }
 
   function createClientCard(client) {
@@ -187,7 +196,7 @@
       '<div class="client-gallery-intro">' +
         '<div class="client-gallery-title-row">' +
           '<h2 class="client-gallery-title"></h2>' +
-          '<button class="gallery-back-btn" aria-label="Back to maternity sessions">' +
+          '<button class="gallery-back-btn" aria-label="Back to all sessions">' +
             '<svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>' +
             'All Sessions' +
           '</button>' +
@@ -228,7 +237,15 @@
       item.setAttribute('tabindex', '0');
       item.setAttribute('aria-label', 'View photo ' + (i + 1) + ' of ' + client.photos.length);
 
-      item.innerHTML = '<img src="' + cldImg(photo.src, 800) + '" alt="' + photo.alt + '" loading="lazy">';
+      // Landscapes show up to two columns wide, so fetch them larger
+      var srcWidth = photoRatio(photo) < 1 ? 1200 : 800;
+      item.innerHTML = '<img src="' + cldImg(photo.src, srcWidth) + '" alt="' + photo.alt + '" loading="lazy">';
+      item._photo = photo;
+
+      // Photos without a stored size are measured once they load
+      if (!photo.width) {
+        item.querySelector('img').addEventListener('load', function () { layoutGallery(grid); });
+      }
 
       item.addEventListener('click', function () {
         openClientLightbox(client.photos, i);
@@ -243,11 +260,132 @@
       grid.appendChild(item);
     });
 
+    layoutGallery(grid);
+
     overlay.scrollTop = 0;
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
     overlay.querySelector('.gallery-back-btn').focus();
   }
+
+  /* ─── GALLERY MASONRY ──────────────────────────────────── */
+  // Uneven columns. Portraits drop into the shortest column; a landscape
+  // spans two neighbouring columns, held back a few photos if needed until
+  // two columns are nearly level. The small step left over is closed by
+  // stretching the tile above it slightly (object-fit trims its sides).
+  var GALLERY_GAP = 4;
+  var LEVEL_TOLERANCE = 0.2;  // step a landscape can sit on (x column width)
+  var MAX_RISE = 0.5;         // how far above the lowest column it may start
+  var MAX_STRETCH = 0.3;      // most a tile may be stretched (x column width)
+  var MAX_WAIT = 4;           // photos a landscape may be held back
+
+  // Height / width. Uses the stored size, else the loaded image, else portrait.
+  function photoRatio(photo, img) {
+    if (photo.width && photo.height) return photo.height / photo.width;
+    if (img && img.naturalWidth) return img.naturalHeight / img.naturalWidth;
+    return 1.5;
+  }
+
+  function layoutGallery(grid) {
+    var tiles = Array.prototype.slice.call(grid.querySelectorAll('.gallery-photo'));
+    if (!tiles.length) return;
+
+    var style = getComputedStyle(grid);
+    var cols = parseInt(style.getPropertyValue('--gallery-cols'), 10) || 4;
+    var padLeft = parseFloat(style.paddingLeft);
+    var padTop = parseFloat(style.paddingTop);
+    var colW = (grid.clientWidth - padLeft - parseFloat(style.paddingRight) - GALLERY_GAP * (cols - 1)) / cols;
+
+    var heights = [];     // next free y in each column
+    var lastInCol = [];   // bottom tile of each column
+    for (var c = 0; c < cols; c++) { heights.push(0); lastInCol.push(null); }
+
+    function setBox(tile, col, span, top, height) {
+      tile._box = { col: col, span: span, top: top, height: height };
+      for (var k = col; k < col + span; k++) {
+        heights[k] = top + height + GALLERY_GAP;
+        lastInCol[k] = tile;
+      }
+    }
+
+    function placePortrait(tile) {
+      var col = 0;
+      for (var k = 1; k < cols; k++) if (heights[k] < heights[col]) col = k;
+      setBox(tile, col, 1, heights[col], colW * tile._ratio);
+    }
+
+    // Returns false when no pair of neighbouring columns is level enough,
+    // and low enough, yet. Keeping landscapes near the lowest column stops
+    // them all stacking in the same two columns.
+    function placeLandscape(tile, force) {
+      var floor = Math.min.apply(null, heights);
+      var col = -1, best = Infinity;
+      for (var k = 0; k < cols - 1; k++) {
+        var step = Math.abs(heights[k] - heights[k + 1]);
+        var rise = Math.max(heights[k], heights[k + 1]) - floor;
+        var ok = force || (step <= colW * LEVEL_TOLERANCE && rise <= colW * MAX_RISE);
+        var score = rise + 2 * step;
+        if (ok && score < best) { col = k; best = score; }
+      }
+      if (col < 0) return false;
+
+      var shortCol = heights[col] < heights[col + 1] ? col : col + 1;
+      var gap = Math.abs(heights[col] - heights[col + 1]);
+      var above = lastInCol[shortCol];
+      if (gap && above && above._box.span === 1 && gap <= colW * MAX_STRETCH) {
+        above._box.height += gap;
+      }
+
+      var width = 2 * colW + GALLERY_GAP;
+      setBox(tile, col, 2, Math.max(heights[col], heights[col + 1]), width * tile._ratio);
+      return true;
+    }
+
+    var waiting = []; // landscapes held back, in order
+
+    function placeWaiting(force) {
+      while (waiting.length) {
+        var next = waiting[0];
+        if (!placeLandscape(next.tile, force || next.waited >= MAX_WAIT)) {
+          waiting.forEach(function (w) { w.waited++; });
+          return;
+        }
+        waiting.shift();
+      }
+    }
+
+    tiles.forEach(function (tile) {
+      tile._ratio = photoRatio(tile._photo, tile.querySelector('img'));
+      if (tile._ratio < 1) {
+        waiting.push({ tile: tile, waited: 0 });
+      } else {
+        placePortrait(tile);
+      }
+      placeWaiting(false);
+    });
+    placeWaiting(true);
+
+    tiles.forEach(function (tile) {
+      var b = tile._box;
+      tile.style.left = (padLeft + b.col * (colW + GALLERY_GAP)) + 'px';
+      tile.style.top = (padTop + b.top) + 'px';
+      tile.style.width = (b.span * colW + (b.span - 1) * GALLERY_GAP) + 'px';
+      tile.style.height = b.height + 'px';
+    });
+
+    grid.style.height = (padTop + Math.max.apply(null, heights) - GALLERY_GAP + parseFloat(style.paddingBottom)) + 'px';
+  }
+
+  var galleryResizeQueued = false;
+  window.addEventListener('resize', function () {
+    if (galleryResizeQueued) return;
+    galleryResizeQueued = true;
+    requestAnimationFrame(function () {
+      galleryResizeQueued = false;
+      var grid = document.querySelector('.client-gallery-overlay.active .client-gallery-grid');
+      if (grid) layoutGallery(grid);
+    });
+  });
 
   function closeClientGallery() {
     var overlay = document.getElementById('client-gallery');
@@ -284,21 +422,19 @@
 
   function filterItems(filter) {
     var grid = document.querySelector('.portfolio-grid-section .portfolio-grid');
-    var clientsSection = document.querySelector('.maternity-clients-section');
-    var isMaternity = filter === 'maternity';
+    var sessionsSection = null;
 
-    if (clientsSection) {
-      clientsSection.style.display = isMaternity ? '' : 'none';
-      if (isMaternity) {
-        var cards = clientsSection.querySelectorAll('.client-card');
-        cards.forEach(function (card) {
-          card.classList.remove('revealed');
-          requestAnimationFrame(function () { card.classList.add('revealed'); });
-        });
-      }
-    }
+    document.querySelectorAll('.client-sessions-section').forEach(function (section) {
+      var isMatch = section.getAttribute('data-category') === filter;
+      section.style.display = isMatch ? '' : 'none';
+      if (isMatch) sessionsSection = section;
+    });
 
-    if (isMaternity) {
+    if (sessionsSection) {
+      sessionsSection.querySelectorAll('.client-card').forEach(function (card) {
+        card.classList.remove('revealed');
+        requestAnimationFrame(function () { card.classList.add('revealed'); });
+      });
       if (grid) grid.style.display = 'none';
       currentItems = [];
       return;
