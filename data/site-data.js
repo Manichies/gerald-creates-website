@@ -30,7 +30,7 @@ const SITE_CONFIG = {
       'Modern aesthetic — clean, timeless images you\'ll love forever'
     ],
     // TODO: Replace with your actual photo
-    image: 'images/geraldProfile.JPG',
+    image: 'https://res.cloudinary.com/dnduxr69x/image/upload/v1791179004/geraldProfile_s1cx3x.jpg',
     imageAlt: 'Gerald, photographer based in Singapore'
   },
 

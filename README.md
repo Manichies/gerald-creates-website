@@ -69,7 +69,7 @@ The site is **data-driven** — all content lives in the `data/` folder as simpl
 
 ### Add a New Portfolio Photo
 
-1. Place your image in `images/portfolio/{category}/` (e.g., `images/portfolio/couples/`)
+1. Upload your image to Cloudinary (or add it through `/admin`) and copy its URL. Upload the full-quality file (under 10 MB); the site requests smaller versions automatically.
 2. Open `data/portfolio-data.js`
 3. Add a new entry to the array:
 
@@ -77,7 +77,7 @@ The site is **data-driven** — all content lives in the `data/` folder as simpl
 {
   id: 'couples-11',                           // Unique ID
   category: 'couples',                        // 'couples', 'maternity', or 'branding'
-  src: 'images/portfolio/couples/my-photo.jpg', // Path to your image
+  src: 'https://res.cloudinary.com/dnduxr69x/image/upload/v123/my-photo.jpg', // Cloudinary URL
   alt: 'Couple at Gardens by the Bay',        // Descriptive alt text
   featured: true                              // true = shows on homepage
 }
@@ -216,7 +216,7 @@ Edit `data/site-data.js` — all fields are clearly labeled with comments.
 
 The site currently uses Unsplash placeholder URLs. To use your own photos:
 
-1. Place optimized images in the appropriate `images/` subdirectory
+1. Upload the image to Cloudinary and copy its URL
 2. Update the `src` field in the relevant data file:
 
 ```javascript
@@ -224,7 +224,7 @@ The site currently uses Unsplash placeholder URLs. To use your own photos:
 src: 'https://images.unsplash.com/photo-xxx?w=600&h=750&fit=crop',
 
 // After (your photo)
-src: 'images/portfolio/couples/sarah-tom-gardens.jpg',
+src: 'https://res.cloudinary.com/dnduxr69x/image/upload/v123/sarah-tom-gardens.jpg',
 ```
 
 ### Creating a Favicon

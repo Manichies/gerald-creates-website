@@ -11,6 +11,15 @@
 (function () {
   'use strict';
 
+  /* ─── IMAGE URLS ──────────────────────────────────────── */
+  // Cloudinary images are resized to `width` and served as WebP/AVIF.
+  // Any other URL is returned unchanged.
+  function cldImg(src, width) {
+    if (!src || src.indexOf('res.cloudinary.com/') === -1) return src;
+    return src.replace('/image/upload/', '/image/upload/f_auto,q_auto,c_limit,w_' + width + '/');
+  }
+  window.cldImg = cldImg;
+
   /* ─── DOM READY ────────────────────────────────────────── */
   document.addEventListener('DOMContentLoaded', function () {
     fetch('data/portfolio-data.json')
@@ -222,7 +231,7 @@
 
     var imgEl = document.querySelector('.about-preview .about-image img');
     if (imgEl && about.image) {
-      imgEl.src = about.image;
+      imgEl.src = cldImg(about.image, 1000);
       imgEl.alt = about.imageAlt;
     }
 
@@ -308,7 +317,7 @@
         var div = document.createElement('div');
         div.className = 'portfolio-item reveal';
         var img = document.createElement('img');
-        img.src = item.src;
+        img.src = cldImg(item.src, 800);
         img.alt = item.alt;
         img.loading = 'lazy';
         div.appendChild(img);
@@ -338,7 +347,7 @@
         imgs.forEach(function (img, i) {
           img.classList.add('img-fading');
           setTimeout(function () {
-            img.src = picked[i].src;
+            img.src = cldImg(picked[i].src, 800);
             img.alt = picked[i].alt;
             img.classList.remove('img-fading');
           }, 500);
@@ -434,7 +443,7 @@
 
     var img = document.querySelector('.about-photo img');
     if (img) {
-      img.src = about.image;
+      img.src = cldImg(about.image, 1000);
       img.alt = about.imageAlt;
     }
 

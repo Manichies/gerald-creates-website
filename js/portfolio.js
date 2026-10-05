@@ -56,12 +56,13 @@
       div.className = 'portfolio-item reveal';
       div.setAttribute('data-category', item.category);
       div.setAttribute('data-id', item.id);
+      div.setAttribute('data-full', cldImg(item.src, 2000));
       div.setAttribute('role', 'button');
       div.setAttribute('tabindex', '0');
       div.setAttribute('aria-label', 'View photo: ' + item.alt);
 
       div.innerHTML =
-        '<img src="' + item.src + '" alt="' + item.alt + '" loading="lazy">' +
+        '<img src="' + cldImg(item.src, 800) + '" alt="' + item.alt + '" loading="lazy">' +
         '<div class="portfolio-overlay">' +
           '<span class="portfolio-category">' + formatCategory(item.category) + '</span>' +
         '</div>';
@@ -100,8 +101,8 @@
 
     card.innerHTML =
       '<div class="client-cover">' +
-        '<img src="' + cover.src + '" alt="' + cover.alt + '" loading="lazy">' +
-        '<img src="' + cover.src + '" alt="' + cover.alt + '" loading="lazy" aria-hidden="true">' +
+        '<img src="' + cldImg(cover.src, 800) + '" alt="' + cover.alt + '" loading="lazy">' +
+        '<img src="' + cldImg(cover.src, 800) + '" alt="' + cover.alt + '" loading="lazy" aria-hidden="true">' +
       '</div>' +
       '<div class="client-card-footer">' +
         '<span class="client-name">' + client.name + '</span>' +
@@ -144,7 +145,7 @@
         }
       };
       probe.onerror = function () { checked++; };
-      probe.src = photo.src;
+      probe.src = cldImg(photo.src, 800);
     });
   }
 
@@ -156,7 +157,7 @@
       var next = photos[idx];
 
       // 1. Load next photo into the hidden bottom layer
-      bottomImg.src = next.src;
+      bottomImg.src = cldImg(next.src, 800);
       bottomImg.alt = next.alt;
 
       // 2. Once loaded, fade top layer out — bottom shows through seamlessly
@@ -165,7 +166,7 @@
 
         // 3. After fade completes, promote bottom to top and reset
         setTimeout(function () {
-          topImg.src = next.src;
+          topImg.src = cldImg(next.src, 800);
           topImg.alt = next.alt;
           topImg.style.opacity = '1';
         }, 850); // slightly longer than the 0.8s CSS transition
@@ -227,7 +228,7 @@
       item.setAttribute('tabindex', '0');
       item.setAttribute('aria-label', 'View photo ' + (i + 1) + ' of ' + client.photos.length);
 
-      item.innerHTML = '<img src="' + photo.src + '" alt="' + photo.alt + '" loading="lazy">';
+      item.innerHTML = '<img src="' + cldImg(photo.src, 800) + '" alt="' + photo.alt + '" loading="lazy">';
 
       item.addEventListener('click', function () {
         openClientLightbox(client.photos, i);
@@ -443,7 +444,7 @@
     if (isClientMode) {
       var photo = clientPhotos[clientIndex];
       if (!photo) return;
-      lightboxImg.src = photo.src;
+      lightboxImg.src = cldImg(photo.src, 2000);
       lightboxImg.alt = photo.alt;
       if (lightboxCounter) {
         lightboxCounter.textContent = (clientIndex + 1) + ' / ' + clientPhotos.length;
@@ -453,7 +454,7 @@
       if (!item) return;
       var img = item.querySelector('img');
       if (img) {
-        lightboxImg.src = img.src.replace(/w=600/, 'w=1200').replace(/h=750/, 'h=1500');
+        lightboxImg.src = item.getAttribute('data-full') || img.src;
         lightboxImg.alt = img.alt;
       }
       if (lightboxCounter) {

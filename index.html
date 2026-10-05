@@ -221,17 +221,10 @@
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
 
-  <!-- Netlify Identity (required for /admin login redirect) -->
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <!-- Netlify Identity: forward invite / password-reset links to the admin login -->
   <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on('init', function (user) {
-        if (!user) {
-          window.netlifyIdentity.on('login', function () {
-            document.location.href = '/admin/';
-          });
-        }
-      });
+    if (/(invite|recovery|confirmation|email_change)_token=/.test(window.location.hash)) {
+      window.location.replace('/admin/' + window.location.hash);
     }
   </script>
 </body>
