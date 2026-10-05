@@ -181,6 +181,27 @@
       "category": "maternity",
       "src": "https://res.cloudinary.com/dnduxr69x/image/upload/v1776061759/IMG_3739_ymdsrs.jpg",
       "alt": "Baiyang & Alvin"
+    },
+    {
+      "id": "graduation-01",
+      "category": "graduation",
+      "src": "images/portfolio/graduation/IMG_2114.JPG",
+      "alt": "Graduation photography session",
+      "featured": true
+    },
+    {
+      "id": "graduation-02",
+      "category": "graduation",
+      "src": "images/portfolio/graduation/IMG_2138.JPG",
+      "alt": "Graduation photography session",
+      "featured": true
+    },
+    {
+      "id": "graduation-03",
+      "category": "graduation",
+      "src": "images/portfolio/graduation/IMG_2143.JPG",
+      "alt": "Graduation photography session",
+      "featured": true
     }
   ]
 }

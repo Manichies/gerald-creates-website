@@ -35,6 +35,7 @@ collections:
                   - { label: "Couples",    value: couples }
                   - { label: "Maternity",  value: maternity }
                   - { label: "Portraits",  value: portraits }
+                  - { label: "Graduation", value: graduation }
                   - { label: "Unscripted", value: unscripted }
               - label: "Photo"
                 name: src

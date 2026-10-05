@@ -278,6 +278,7 @@
     var rows = [
       { key: 'portraits',   label: 'Portraits' },
       { key: 'maternity',   label: 'Maternity' },
+      { key: 'graduation',  label: 'Graduation' },
       { key: 'unscripted',  label: 'Unscripted' },
       { key: 'couples',     label: 'Couples' }
     ];
@@ -289,6 +290,7 @@
 
     rows.forEach(function (cat) {
       var photos = PORTFOLIO_DATA.filter(function (item) { return item.category === cat.key; });
+      if (!photos.length) return;
       var picked = pickRandom(photos, 3);
 
       var row = document.createElement('div');
